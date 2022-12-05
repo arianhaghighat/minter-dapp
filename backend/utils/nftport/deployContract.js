@@ -28,7 +28,7 @@ let {
 
 const deployContract = async () => {
   const ok = await yesno({
-    question: `Is all REQUIRED contract information correct in config.js? (y/n):`,
+    question: `Test Is all REQUIRED contract information correct in config.js? (y/n):`,
     default: null,
   });
   
@@ -39,6 +39,7 @@ const deployContract = async () => {
 
   if(GENERIC) {
     try {
+      console.log("Entered")
       let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetasGeneric/_ipfsMetasResponse.json`);
       let metaData = JSON.parse(jsonFile);
       if(metaData.response === "OK") {
@@ -55,10 +56,12 @@ const deployContract = async () => {
     }
   } else {
     try {
+      console.log(basePath)
       let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetas/_ipfsMetasResponse.json`);
       let metaData = JSON.parse(jsonFile);
       if(metaData.response === "OK") {
         if(!BASE_URI) {
+          console.log("yes")
           BASE_URI = metaData.metadata_directory_ipfs_uri;
         }
       } else {
@@ -101,6 +104,7 @@ const deployContract = async () => {
       },
       body: JSON.stringify(contract),
     };
+    console.log(url, options)
     const response = await fetchNoRetry(url, options);
     fs.writeFileSync(`${basePath}/build/contract/_deployContractResponse.json`, JSON.stringify(response, null, 2));
     if(response.response === "OK") {
