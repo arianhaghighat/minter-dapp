@@ -7,8 +7,8 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "DefiFall2022";
-const description = "NFTs generated for the Fall 2022 FNCE 559 (Defi) class";
+const namePrefix = "HaskayneDefiFall2022";
+const description = "NFTs generated for the Haskayne Fall 2022 FNCE 559 (Defi) class";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 const layerConfigurations = [
@@ -35,7 +35,7 @@ const format = {
 };
 
 const extraMetadata = {
-  external_url: "https://haskayne.ucalgary.ca/decentralized-finance-laboratory", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://defi2022.netlify.app/", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -43,23 +43,23 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'goerli'; // only goerli, polygon, or ethereum
+const CHAIN = 'polygon'; // only goerli, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'DefiFall2022_NFTs';
-const CONTRACT_SYMBOL = 'DFN';
+const CONTRACT_NAME = 'HaskayneDefiFall2022';
+const CONTRACT_SYMBOL = 'HDF22';
 const METADATA_UPDATABLE = false; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xee418E454464be9071d0D9F79EAA6e820FF07715';
 const TREASURY_ADDRESS = '0xee418E454464be9071d0D9F79EAA6e820FF07715';
 const MAX_SUPPLY = 20; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 0.001; // Minting price per NFT. Goerli = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const MINT_PRICE = 0.0001; // Minting price per NFT. Goerli = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 1; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-12-25T10:00:00+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-12-01T10:00:00+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-12-25T10:00:00+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
+const PRESALE_MINT_START_DATE = "2022-12-01T10:00:00+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
 const ROYALTY_SHARE = 0; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0xee418E454464be9071d0D9F79EAA6e820FF07715"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
