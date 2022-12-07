@@ -38,27 +38,6 @@
           </a>
         </div>
         <div class="menu">
-          <a
-            href="https://discord.gg/A9CnsVzzkZ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/discord.webp" alt="Discord" />
-          </a>
-          <a
-            href="https://twitter.com/codeSTACKr"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/twitter.webp" alt="Twitter" />
-          </a>
-          <a
-            href="https://opensea.io/collection/codecats"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/opensea.webp" alt="Opensea" />
-          </a>
           <button class="wallet-btn btn" id="connectWallet">
             <span>Connect Wallet</span>
           </button>
@@ -68,11 +47,10 @@
 
     <section class="container not-connected">
       <div>
-        <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
-        <h1 id="welcomeH1">Welcome to the CodeCats NFT Project!</h1>
-        <p id="welcomeP">
-          The CodeCats NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.
-        </p>
+        <br>
+        <h2 id="welcomeH2"></h2>
+        <h1 id="welcomeH1"></h1>
+        <p id="welcomeP"></p>
       </div>
     </section>
 
@@ -104,7 +82,6 @@
         </div>
         <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
         <p id="mainText">
-          A new batch of cute cats will be available very soon!
         </p>
         <a
           id="actionButton"
@@ -129,7 +106,7 @@
               <p id="maxPerMint">5 per wallet</p>
             </div>
           </div>
-          <div class="mint-qty">
+          <div class="mint-qty" id="mintQty">
             <span>
               <button class="input-number-decrement btn" id="mintDecrement">–</button>
               <input
@@ -144,7 +121,9 @@
             </span>
             <button id="setQtyMax" class="btn">SET MAX</button>
           </div>
-          <div class="total-price-container">
+          <hr>
+          <br>
+          <div class="total-price-container" id="total-price-container">
             <h3>Total</h3>
             <p id="totalPrice">.001 ETH</p>
           </div>
@@ -161,7 +140,7 @@
         <p>View it in the collection:</p>
         <a
           id="mintedLinkBtn"
-          href="https://testnets.opensea.io/collection/teststackr-collection"
+          href="https://opensea.io/collection/haskaynedefifall2022"
           target="_blank"
           rel="noopener noreferrer"
         >

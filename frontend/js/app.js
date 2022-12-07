@@ -163,16 +163,22 @@ async function loadInfo() {
   const mainText = document.getElementById("mainText");
   const actionButton = document.getElementById("actionButton");
   const mintContainer = document.getElementById("mintContainer");
+  const mintQty = document.getElementById("mintQty");
+  const totalpricecontainer = document.getElementById("total-price-container");
   const mintButton = document.getElementById("mintButton");
   const spinner = document.getElementById("spinner");
 
   let startTime = "";
   if (publicMintActive) {
     mainHeading.innerText = h1_public_mint;
-    mainText.innerText = p_public_mint;
+    // mainText.innerText = p_public_mint;
     actionButton.classList.add('hidden');
     mintButton.innerText = button_public_mint;
     mintContainer.classList.remove('hidden');
+    mintQty.classList.add('hidden');
+    totalpricecontainer.classList.add('hidden');
+
+
     setTotalPrice();
   } else if (presaleMintActive) {
     startTime = window.info.runtimeConfig.publicMintStart;
@@ -319,6 +325,14 @@ async function mint() {
       if(mintTransaction) {
         if(chain === 'goerli') {
           const url = `https://goerli.etherscan.io/tx/${mintTransaction.transactionHash}`;
+          const mintedContainer = document.querySelector('.minted-container');
+          const countdownContainer = document.querySelector('.countdown');
+          const mintedTxnBtn = document.getElementById("mintedTxnBtn");
+          mintedTxnBtn.href = url;
+          countdownContainer.classList.add('hidden');
+          mintedContainer.classList.remove('hidden');
+        } else {
+          const url = `https://polygonscan.com//tx/${mintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
